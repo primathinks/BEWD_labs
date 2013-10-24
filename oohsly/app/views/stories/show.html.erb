@@ -1,0 +1,17 @@
+<h1><%= @story.title %></h1>
+<p><%= link_to @story.link, @story.link %>
+
+<%= form_for(@comment, :url => comments_path) do |f| %>
+	<%= f.text_area :comment_body %>
+	<%= f.hidden_field :story_id, :value => @story.id %>
+	<%= f.submit %>
+<% end %>
+
+<p><strong>Comments:</strong></p>
+<% unless @comments_all.nil? %>
+	<% @comments_all.each do |comment| %>
+		<p><span class="user"><%= comment.email %>:</span><br />
+		<%= comment.comment_body %></p>
+	<% end %>
+<% end %>
+<p><%= link_to "Back to home page", root_path %></p>

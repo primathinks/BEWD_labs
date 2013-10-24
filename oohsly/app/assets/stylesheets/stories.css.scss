@@ -1,0 +1,23 @@
+// Place all the styles related to the stories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  font-family: Arial, sans-serif;
+}
+
+#stories {
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 5px;
+    }
+  }
+}
+
+.user {
+	font-size: 0.8em;
+	color: #0066ff;
+}
