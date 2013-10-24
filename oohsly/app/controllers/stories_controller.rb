@@ -8,7 +8,7 @@ class StoriesController < ApplicationController
   def show
     @story = Story.find params[:id]
     @comment = Comment.new
-    @comments_all = Comment.find_all_by_story_id(params[:id])
+    @comments_all = Comment.order("updated_at DESC").find_all_by_story_id(params[:id])
   end
 
   def new
